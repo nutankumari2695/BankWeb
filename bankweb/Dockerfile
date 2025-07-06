@@ -1,5 +1,5 @@
 # Use OpenJDK 24 image
-FROM openjdk:24-jdk-slim
+FROM openjdk:23-jdk-slim
 
 # Add a label
 # LABEL maintainer="yourname@example.com"
