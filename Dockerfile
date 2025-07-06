@@ -5,7 +5,7 @@ FROM openjdk:23-jdk-slim
 WORKDIR /app
 
 # Copy source files
-COPY bankweb/src/main/java/*.java ./src/
+COPY src/main/java/*.java ./src/
 COPY lib ./lib/
 
 # Create output directory
