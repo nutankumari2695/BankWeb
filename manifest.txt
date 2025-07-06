@@ -1,0 +1,2 @@
+Main-Class: SignupServlet
+Class-Path: lib/javax.servlet-api-4.0.1.jar lib/mysql-connector-j-9.1.0.jar
