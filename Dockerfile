@@ -1,12 +1,8 @@
-FROM tomcat:9-jdk11-openjdk
+FROM tomcat:9.0
 
-# Clean default webapps
-RUN rm -rf /usr/local/tomcat/webapps/*
+COPY tomcat/conf/server.xml /usr/local/tomcat/conf/server.xml
+COPY BankWebBuild/BankWebBuild/BankWebBuild/BankWeb.war /usr/local/tomcat/webapps/
 
-# Copy WAR to webapps
-COPY BankWebBuild/BankWebBuild/BankWebBuild/BankWeb.war /usr/local/tomcat/webapps/ROOT.war
-
-# Expose port
-EXPOSE 8070
-
+EXPOSE 8080
 CMD ["catalina.sh", "run"]
+
