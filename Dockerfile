@@ -7,6 +7,6 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 COPY BankWebBuild/BankWebBuild/BankWebBuild/BankWeb.war /usr/local/tomcat/webapps/ROOT.war
 
 # Expose port
-EXPOSE 8080
+EXPOSE 8070
 
 CMD ["catalina.sh", "run"]
