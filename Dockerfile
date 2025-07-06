@@ -1,23 +1,12 @@
-# Use base image
-FROM openjdk:23-jdk-slim
+FROM tomcat:9-jdk11-openjdk
 
-# Set working directory
-WORKDIR /app
+# Clean default webapps
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy source files
-COPY src/main/java/*.java ./src/
-COPY lib ./lib/
-
-# Create output directory
-RUN mkdir out
-
-# Compile Java files and create JAR
-RUN javac -cp "lib/*" -d out src/*.java && \
-    echo "Main-Class: SignupServlet" > manifest.txt && \
-    jar cfm BankWeb.jar manifest.txt -C out .
+# Copy WAR to webapps
+COPY BankWebBuild/BankWebBuild/BankWebBuild/BankWeb.war /usr/local/tomcat/webapps/ROOT.war
 
 # Expose port
 EXPOSE 8080
 
-# Run the application
-ENTRYPOINT ["java", "-cp", "BankWeb.jar:lib/*", "SignupServlet"]
+CMD ["catalina.sh", "run"]
