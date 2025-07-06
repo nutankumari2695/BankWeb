@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+
+
+   body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+       
+    }
+   
+
+    .navbar .nav-link {
+        font-weight: bold;
+    }
+
+       .dropdown-submenu {
+            position: relative;
+        }
+
+       
+        .dropdown-submenu:hover .submenu {
+            display: block;
+        }
+
+        .nav-link{
+        color:black;
+            cursor: pointer;
+        }
+        /* Removes the default arrow from Bootstrap dropdown-toggle */
+.no-arrow::after {
+    display: none !important;
+}
+            
+   
+ /* ✅ Fix main dropdown menu */
+.dropdown-menu {
+    min-width: 100px !important;
+    z-index: 1050;
+}
+
+/* ✅ Ensure submenus appear properly */
+.dropdown-submenu {
+    position: relative;
+}
+.submenu{
+width:150px;
+}
+
+.dropdown-submenu .submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 2%;
+    min-width: 180px;
+    
+    background-color: white;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ✅ Ensure the dropdown arrow works properly */
+.submenu-toggle::after {
+    
+    float: right;
+} 
+    .btn-hover-tooltip {
+        position: relative;
+    }
+
+    .btn-hover-tooltip:hover::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 110%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #000;
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        white-space: nowrap;
+        z-index: 999;
+        opacity: 0.9;
+    }
+
+    .main-buttons a {
+        font-weight: bold;
+        border-radius: 10px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .main-buttons a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d4edda; /* light green for success */
+    color: #155724;
+    padding: 15px 25px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 9999;
+    max-width: 400px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.custom-alert .close-btn {
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+    
+ 
